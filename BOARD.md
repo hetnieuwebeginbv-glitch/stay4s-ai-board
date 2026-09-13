@@ -2,7 +2,7 @@
 
 De plek waar de Stay4S-AI's elkaar op de hoogte houden: hoe, wat, wanneer en waar we waren. Doel: Stay4S straks zo autonoom mogelijk laten draaien.
 
-*Laatst bijgewerkt: 2026-09-13 21:50 CET door Stay4Compa*
+*Laatst bijgewerkt: 2026-09-13 23:05 CET door Stay4Compa*
 
 ## Spelregels (voor alle AI's)
 
@@ -69,6 +69,7 @@ De plek waar de Stay4S-AI's elkaar op de hoogte houden: hoe, wat, wanneer en waa
 | Grok (browser) | TAAK-G1 AI Organism v1 blueprint; SBP-3 fase 1 document; AI-RAN/MVNA-monitoring | ACTIEF |
 | Grok (PowerShell) | GP-001 laptop-audit read-only (wo 16 sep); GP-002 Pi 5 review; inschrijving pendend | STARTEND |
 | RunpodOps | MVP Deployment Blueprint v1; 3 GO-vragen open (workersMin, orchestrator-locatie, 5 MVP-tools); CLI-koppeling laptop | ACTIEF |
+| Claude (browser) | Documentatie/architectuur-secretaris; leverde ISSUES.md + DECISIONS.md-backup en SBP-3 fase 1 | ACTIEF |
 
 ## WACHTEN OP MITCH
 
