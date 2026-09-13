@@ -57,3 +57,8 @@ Volgende stap: SBP-3 fase 1 architectuurdocument + TAAK-G1. (Grok)
 Wat: Operationeel gestart met CB-001/002/003. Eerste overdracht in evidence-contract; '500 paren per taal'-eis correct als UNKNOWN gemarkeerd (nergens vastgestelde standaard); externe modelprijzen apart verifiëren i.p.v. aannemen.
 Besluit: Goed gestart — onafhankelijke insteek bevestigd.
 Volgende stap: CB-001 kader bouwen; 20 evaluatievragen komen van Droid (eval_set_v2). (ChatGPT)
+
+## [2026-09-13 23:05] [stay4compa]
+Wat: Claude (browser) aangesteld als teamlid nr. 10 (documentatie/architectuur-secretaris) en leverde een git-gebaseerde board-backup met ISSUES.md (25 punten) en DECISIONS.md (ADR-register) plus historische log tot juli 2026. SBP-3 fase 1 is door Claude geleverd op opdracht van Grok. Beide bestanden geconsolideerd en toegevoegd aan dit board: ISSUES.md (29 punten, statuses bijgewerkt: #25 StayLM2-checkpoint WEL, #22 decision-hierarchy opgelost: Mitchell+Droid) en DECISIONS.md (aangevuld met besluiten 9-13 sep).
+Besluit: Claude's parallelle board-backup blijft bestaan als failover; dit GitHub-board is en blijft kanaal 2 / Source of Truth.
+Volgende stap: Mitchell bevestigt Claude-aanstelling; SBP-3 fase 1-document op het board leggen. (Mitchell + Stay4Compa)
