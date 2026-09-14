@@ -14,5 +14,7 @@
 | ADR-CORPUS | Team-prompts/overdrachten worden trainingsdata (Stay4S Team Corpus v1) | Accepted | 13 sep |
 | ADR-HIER | Decision-hierarchy: Mitchell (eindbeslisser) + Droid (linkerhand) | Accepted | 13 sep |
 | ADR-0013 | Begrensde autonomie voor AI-leden binnen de quality-gate pipeline | Accepted - GO door Mitchell + Droid 14 sep; uitzondering: nog geen vaste kostendrempel voor harde hekken; overige hekken (flash-acties, device tree/kernel, naam/merk, klantdata/privacy, externe communicatie) onverkort | 14 sep |
+| ADR-CHECKPOINT | Primair StayLM2-checkpoint: SFT1 (staylm2:1, overall 0.4664, beste domein-scores); Mlang (0.3715) = reserve voor meertalige lijn; GO voor DPO-run op SFT1 | Accepted - Mitchell 14 sep | 14 sep |
+| ADR-WORKERSMIN | staylm2-serverless endpoint: workersMin = 0 - volledig on-demand, geen vaste kosten; cold start acceptabel tijdens beta | Accepted - Mitchell 14 sep | 14 sep |
 
 *Bron: Claude-browser board-backup + Stay4Compa logboek (13 sep 2026).*
