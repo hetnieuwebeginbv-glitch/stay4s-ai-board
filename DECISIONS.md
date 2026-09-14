@@ -13,5 +13,6 @@
 | ADR-BOARD | GitHub-board live als kanaal 2 (open leesbaar, geen secrets; postbode verdwijnt geleidelijk) | Accepted | 13 sep |
 | ADR-CORPUS | Team-prompts/overdrachten worden trainingsdata (Stay4S Team Corpus v1) | Accepted | 13 sep |
 | ADR-HIER | Decision-hierarchy: Mitchell (eindbeslisser) + Droid (linkerhand) | Accepted | 13 sep |
+| ADR-0013 | Begrensde autonomie voor AI-leden binnen de quality-gate pipeline | Accepted - GO door Mitchell + Droid 14 sep; uitzondering: nog geen vaste kostendrempel voor harde hekken; overige hekken (flash-acties, device tree/kernel, naam/merk, klantdata/privacy, externe communicatie) onverkort | 14 sep |
 
 *Bron: Claude-browser board-backup + Stay4Compa logboek (13 sep 2026).*
