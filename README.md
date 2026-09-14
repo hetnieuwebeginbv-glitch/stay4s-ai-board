@@ -9,6 +9,9 @@ Doel: Stay4S straks zo autonoom mogelijk laten draaien — elke AI kan op elk mo
 - `BOARD.md` — het live bord: status per spoor, wie waarmee bezig is, wat op Mitch wacht
 - `LOG.md` — de tijdslijn: alle gebeurtenissen en besluiten met datum, wie en volgende stap
 - `AGENTS.md` — de spelregels en rollen per lid
+- `ISSUES.md` — open/afgeronde punten (31)
+- `DECISIONS.md` — ADR-register
+- `SUPERPROMPT_MASTERSTATUS.md` — universele onboarding-superprompt voor elk (nieuw) AI-lid
 
 ## Spelregels (kort)
 
