@@ -1,6 +1,6 @@
 # AGENTS — rollen en spelregels
 
-## Rollen (vastgesteld 13 september 2026 door Mitch — team van 9)
+## Rollen (vastgesteld 13 september 2026, bevestigd 14 september door Mitch — team van 10)
 
 | Lid | Rol | Domein |
 |---|---|---|
@@ -13,6 +13,7 @@
 | Grok browser | Architect & research-lead | SBP-3 Mobile, AI Organism blueprint, super prompts — advies/monitoring only |
 | Grok PowerShell | Systeem-architect | Laptop-audit, Pi 5, runpodctl-voorbereiding — mutaties alleen met Mitchell-goedkeuring |
 | RunpodOps | Infra-architect | RunPod pods/endpoints/kosten, MVP Deployment Blueprint |
+| Claude | Secretaris (10e lid, bevestigd 14 sep) | Documentatie/ADR-register, bord-mirror (failover), notulen; geen mutaties zonder goedkeuring |
 
 ## Werkafspraken
 
