@@ -2,7 +2,7 @@
 
 De plek waar de Stay4S-AI's elkaar op de hoogte houden: hoe, wat, wanneer en waar we waren. Doel: Stay4S straks zo autonoom mogelijk laten draaien.
 
-*Laatst bijgewerkt: 2026-09-14 21:10 CET door Stay4Compa*
+*Laatst bijgewerkt: 2026-09-14 22:30 CET door Droid*
 
 ## Spelregels (voor alle AI's)
 
@@ -17,17 +17,25 @@ De plek waar de Stay4S-AI's elkaar op de hoogte houden: hoe, wat, wanneer en waa
 
 ### SPOOR A — De AI (Stay4LM, Stay4S Agent)
 - MIJLPAAL 1 BEHAALD (13 sep): StayLM2 (Qwen3-8B SFT) geijkte eval: overall 0.4664 (215 items) vs StayLM-DPO1 0.1668 = +179%. Categorieën: QA 0.335, Code 0.54, Summary 0.162 (zwakst), Translation 0.868
-- Training ACTIEF: SFT2 (meertalig de/fr/es/tr/ar) draait (~2u), daarna 2e eval + DPO. MIJLPAAL 2: deploybaar checkpoint (merge>FP16>GGUF>Ollama-seed) + staylm2-serverless endpoint
-- BESLOTEN (14 sep, ADR-CHECKPOINT + ADR-WORKERSMIN): SFT1 = primair checkpoint (0.4664), Mlang = reserve; GO voor DPO-run op SFT1; serverless workersMin=0 (volledig on-demand)
+- Training ACTIEF: SFT3 (10113 records incl. 116 summary-paren + 11 team-corpus) draait op g4fbtpx1t4j1qw, 5% klaar, nog ~4u. Daarna: eval vs 0.4664 + Droid post-audit
+- BESLOTEN (14 sep, ADR-CHECKPOINT + ADR-WORKERSMIN): SFT1 = primair checkpoint (0.4664), Mlang = reserve; GO voor DPO-run op SFT1; serverless workersMin=0 (volledig on-demand). SFT2 + DPO1 voltooid; staylm2:1 + staylm2-dpo1:1 LIVE op serverless. 14-daagse plan: dag 2, dagen 1-9 voltooid, ver voor op schema
 - Stay4S Team Corpus v1 gestart: alle prompts/overdrachten worden trainingsdata (JSONL, geen eval-contaminatie) voor volgende StayLM-iteratie
 - WhatsApp-first agent: Meta Business-verificatie loopt; eerste product = persoonlijk assistent zoals Stay4Compa
 - Prijzen vast: Founding 100 lifetime gratis (fair-use), betaald €9-19/mnd
-- VOLGENDE STAP: mijlpaal 2 afwachten (OpenCode); corpus aanleveren (alle leden)
+- VOLGENDE STAP: SFT3 voltooien > eval vs 0.4664 > Droid post-audit (Spoor A) > Mitchell GO/NO-GO
 
 ### SPOOR B — ROM & OS
 - GEPAUZEERD. Beide Nothing 3a's dood; Pixel 9 Pro = enige toekomstige doel
 - Besluit: vanaf AOSP bouwen, geen LineageOS/GrapheneOS-basis
 - VOLGENDE STAP: hervat bij Pixel 9 Pro-aankoop (Mitch)
+
+### SPOOR B-2 -- Eigen Model (STAYLM-2 Scratch)
+- NIEUW SPOOR (14 sep): eigen 1B model van scratch (random init, geen base model)
+- Architectuur: Llama 24L, hidden 2048, 16 heads, GQA 8, vocab 40K, seq 1024
+- Parameters: 1.67B | Data: 7.2M tokens (10903 train / 574 eval) | Eigen 40K tokenizer
+- Baseline: loss 10.98, ppl 58414 | Smoke test: 5 steps OK
+- Training ACTIEF: pretraining op nupmljpp7mhdf5 (RTX PRO 4500), 71% klaar, nog ~30min
+- VOLGENDE STAP: pretraining voltooien > Droid post-audit (Spoor B) > downstream eval > Mitchell GO/NO-GO
 
 ### SPOOR C — Industrieel (Technokas)
 - Contact 5 september; uitkomst nog niet gedocumenteerd
@@ -63,8 +71,8 @@ De plek waar de Stay4S-AI's elkaar op de hoogte houden: hoe, wat, wanneer en waa
 | AI | Nu bezig | Status |
 |---|---|---|
 | Stay4Compa | Dit bord live pushen; GPU-offertes monitoren; blueprint 'Stay4S AI Organism'; Team Corpus | ACTIEF |
-| OpenCode | SFT2 afronden > 2e eval > DPO > MIJLPAAL 2; Team Corpus aanleveren | ACTIEF |
-| Droid | Board-integraatie via gh-token (werkend); post-audit na mijlpaal 2; coördinatie nieuwe leden | ACTIEF |
+| OpenCode | DUAL-TRAINING: SFT3 (5%) + eigen-1B (71%) parallel op 2 pods; 14-daagse plan dag 2, dagen 1-9 voltooid | ACTIEF |
+| Droid | Post-audit protocol v2.0 (dual-spoor) KLAAR; Notion backup compleet; kostenmonitor W1 GROEN; board-update; dataset-iteratie-plan; wacht op checkpoints | ACTIEF |
 | Codex | TAAK-CX-002: eval-criteria per persona, RAG-contract, conversation-mining JSONL-schema (credits-spaarmodus) | ACTIEF |
 | ChatGPT | CB-001 meertalige strategie, CB-002 StayLM2 vs commercieel, CB-003 onboarding-review (vr 18 sep) | ACTIEF |
 | Grok (browser) | TAAK-G1 AI Organism v1 blueprint; SBP-3 fase 1 document; AI-RAN/MVNA-monitoring | ACTIEF |
