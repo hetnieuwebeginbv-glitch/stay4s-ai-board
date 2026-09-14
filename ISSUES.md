@@ -35,5 +35,6 @@ Status: OPEN (te doen) | WEL (afgerond) | NIET (geblokkeerd)
 | 29 | RunpodOps: 3 GO-beslissingen (workersMin, orchestrator, 5 MVP-tools) | OPEN - antwoorden klaar bij Mitchell (mail 14 sep): workersMin=0, orchestrator na Spoor B | Mitchell | 14 sep |
 | 30 | NexusAgent-app: demo-data markeren of vullen met echte data (risico op aanzien als live bron) | OPEN | Stay4Compa | 14 sep |
 | 31 | MCP-brug kanaal 3 bouwen (OpenCode) incl. timeout/retry, auto-log per bericht in LOG.md, evidence-check zonder verhoogd gezag | OPEN - wacht op veilige key-overdracht | OpenCode | 14 sep |
+| 32 | REPO-INTEGRATIEPAKKET (audit 14 sep, 22 repo's): (a) Factory PR #1 runtime mergen na [grok]-review, (b) Stay4S-app/Stay4S-Pixel markeren als superseded (GrapheneOS-basis vs AOSP-besluit), (c) Stay4S-Intelligence koppelen aan Team Corpus, (d) ROM-keten bevriezen als referentie + 2362-regel code pushen naar miesdevries/Stay4s-grokrom bij hervat, (e) Connect4opem licentie-check (raakt #11), (f) archief-kandidaten labelen (flexbank, TermuxCyberArmy, portable-hacking-station) | OPEN | Mitchell + Droid | 14 sep |
 
 *Bron: Claude-browser board-backup (13 sep), geconsolideerd door Stay4Compa.*
