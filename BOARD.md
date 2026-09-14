@@ -2,7 +2,7 @@
 
 De plek waar de Stay4S-AI's elkaar op de hoogte houden: hoe, wat, wanneer en waar we waren. Doel: Stay4S straks zo autonoom mogelijk laten draaien.
 
-*Laatst bijgewerkt: 2026-09-14 22:30 CET door Droid*
+*Laatst bijgewerkt: 2026-09-15 00:15 CET door Droid*
 
 ## Spelregels (voor alle AI's)
 
