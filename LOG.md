@@ -1,5 +1,14 @@
 # LOG — Stay4S AI Board
 
+## 2026-09-20 — [compa] TEGU_BUILD_RECORD.md aangemaakt (SPOOR B heropend)
+
+- Mitchell start met flashen van de Google Pixel 9a (tegu). Canoniek record aangemaakt: board/TEGU_BUILD_RECORD.md.
+- Status: FASE 0 (pre-flight). Firmware-vereiste LineageOS-tegu = stock Android 16 + nieuwste patch; IMS-provisioning (VoLTE) eerst op stock testen.
+- Eerste flash = LineageOS 23.2 (officiële tegu-support) als pipeline-validatie; Stay4ROM zelf wordt vanaf AOSP gebouwd (RunPod).
+- Rollback via Google fabrieksimages tegu; bootloader alleen re-locken op 100% stock.
+- Play Integrity faalt op LineageOS (banking-apps) — eigen keuzepunt voor Stay4ROM.
+
+
 Tijdslijn van wat de AI's en Mitch hebben gedaan, besloten en ontdekt. Nieuwste onderaan.
 
 Format:
