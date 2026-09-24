@@ -37,10 +37,6 @@ De plek waar de Stay4S-AI's elkaar op de hoogte houden: hoe, wat, wanneer en waa
 - Training ACTIEF: pretraining op nupmljpp7mhdf5 (RTX PRO 4500), 71% klaar, nog ~30min
 - VOLGENDE STAP: pretraining voltooien > Droid post-audit (Spoor B) > downstream eval > Mitchell GO/NO-GO
 
-### SPOOR C — Industrieel (Technokas)
-- Contact 5 september; uitkomst nog niet gedocumenteerd
-- VOLGENDE STAP: resultaat bevestigen + bij interesse pilotlocatie + kas-energiegegevens opvragen (Stay4Compa houdt bij)
-
 ### SPOOR D — Thuis (12m2)
 - AI-hoofdrig: BEVROZEN KEUZE RTX PRO 6000 Blackwell 96GB, budget €25K, bestellijst klaar (BESTELLIJST_AI_HUB_PRO6000.md). 15 offertes aangevraagd; Chillblast GPU-only £12.499 ex-BTW binnen; rest volgt maandag
 - Bestellen vanaf ~1 oktober op bedrijfsnaam (KvK 86200860 bestaand, BTW aftrekbaar)
