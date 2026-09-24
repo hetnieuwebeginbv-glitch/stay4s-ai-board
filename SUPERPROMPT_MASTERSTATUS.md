@@ -23,7 +23,7 @@
 ## 3. WAAR WE STAAN — PER SPOOR
 - **SPOOR A (AI):** StayLM2 (Qwen3-8B SFT) MIJLPAAL 1: eval 0.4664 vs 0.1668 = +179% (QA 0.335, Code 0.54, Summary 0.162 zwakst, Translation 0.868). Besluit 14 sep: SFT1 = primair checkpoint, GO voor DPO-run; daarna merge>FP16>GGUF>Ollama-seed + serverless endpoint. STAYLM-2 SCRATCH 1B (eigen Llama-arch, 1.67B params, eigen 40K tokenizer) in pretraining op zelfde pod; StayLM-0/-1 blijven intact. Team Corpus v1 loopt.
 - **SPOOR B (ROM/OS):** GEPAUZEERD — beide Nothing 3a's dood; bouw vanaf AOSP; Pixel 9 Pro = enige toekomstige doel
-- **SPOOR C (Technokas):** contact 5 sep, uitkomst nog te documenteren
+- **SPOOR C (Technokas):** VERWIJDERD 24 sep 2026 (besluit Mitchell) — geen opvolging meer; werkstructuur = 3 sporen
 - **SPOOR D (12m2):** BEVROZEN KEUZE RTX PRO 6000 Blackwell 96GB, budget EUR 25.000, bestellen ~1 okt op KvK 86200860. Beste offerte: Informatique NL EUR 13.250 ex btw (wacht op antwoord). Elektricien 16A-groep vóór de rig. Later io.net-verhuur van idle-tijd (klantdata nooit op de rig).
 - **SPOOR M (Mobile/SBP-3):** Grok werkt fase 1 architectuurdocument zelf uit (Claude's versie = referentie). MVNA-shortlist: BICS, eSIM Go, iBASIS, Transatel/1Global
 - **CLOUD:** zelfgebouwd, 2 gescheiden omgevingen (Interne Cloud + Klantencloud). Deadline 18 sep: stay4s.com live via Strato. RunPod = piek-compute on-demand; Hetzner VOLLEDIG UIT (issue #19 gesloten)
