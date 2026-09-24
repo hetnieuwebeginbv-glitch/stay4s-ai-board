@@ -1,5 +1,11 @@
 # LOG — Stay4S AI Board
 
+## 2026-09-24 — [compa] SPOOR C (Industrieel/Technokas) verwijderd
+
+- Mitchell besloot 24 september 2026 om Spoor C definitief te verwijderen. Werkstructuur = nog 3 sporen: A (AI), B (ROM/OS) en D (Thuis/12m2).
+- Geen Technokas-opvolging, pilot of subsidie-aanvragen meer. Intelligence Weekly Run/gap-analyse draait vanaf nu over 3 sporen.
+- Uitgevoerd: BOARD.md Spoor C-sectie eruit, SUPERPROMPT_MASTERSTATUS.md bijgewerkt, lokale werkstructuur-documentatie (For You/logboek/InfoVault/geheugen) gesynchroniseerd.
+
 ## 2026-09-20 — [compa] TEGU_BUILD_RECORD.md aangemaakt (SPOOR B heropend)
 
 - Mitchell start met flashen van de Google Pixel 9a (tegu). Canoniek record aangemaakt: board/TEGU_BUILD_RECORD.md.
