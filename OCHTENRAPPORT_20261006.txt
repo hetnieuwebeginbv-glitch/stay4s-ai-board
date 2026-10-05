@@ -1,0 +1,109 @@
+STAY4S OCHTENRAPPORT -- 6 OKTOBER 2026
+=======================================
+
+GOEDEMORGEN MITCHELL!
+
+Hier is wat ik heb gedaan terwijl je sliep:
+
+NIEUW GEBOUWD (5 componenten):
+=============================
+
+1. AI GATEWAY (stay4s_gateway.py) -- POORT 8092 OP PI 5
+   - De "Decaan Router" die automatisch kiest welk model/tool antwoordt
+   - Ondersteunt: Ollama modellen, SearXNG web search, RAG, image gen, video gen
+   - Systemd service: stay4s-gateway.service (auto-start)
+   - Getest: werkt! Heeft stay4s-1b model gebruikt om te antwoorden
+
+2. RAG KNOWLEDGE FILLER (rag_knowledge_filler.py) -- VOLTOOID
+   - 30 Stay4S kennis items in de RAG database gestopt
+   - Database: /mnt/usb2/rag/rag.db op Pi 5
+   - Embeddings via nomic-embed-text (Ollama)
+   - Alle Stay4S kennis nu doorzoekbaar voor de AI
+
+3. IMAGE GENERATION SERVER (image_gen_server.py) -- OP RUNPOD
+   - Stable Diffusion 1.5 + FLUX.1-schnell ondersteuning
+   - API op poort 7860 (start na training)
+   - Post-training automation zal deze starten
+
+4. VIDEO GENERATION SERVER (video_gen_server.py) -- OP RUNPOD
+   - LTX-Video (Lightricks) ondersteuning
+   - API op poort 7861 (start na training)
+   - Post-training automation zal deze starten
+
+5. POST-TRAINING AUTOMATION (post_training_auto.sh) -- ACTIEF OP RUNPOD
+   - Wacht tot 1.15B training klaar is (elke 5 min check)
+   - Daarna automatisch: University -> GGUF -> HuggingFace -> Image/Video servers
+   - VOLLEDIG AUTONOOM
+
+PI 5 STATUS:
+===========
+- Temperatuur: 51.2°C (met ventilator - perfect!)
+- RAM: 3.2GB gebruikt, 4.6GB beschikbaar
+- 18 systemd services actief
+- 2 Docker containers: Open WebUI (healthy), SearXNG (running)
+- 5 Ollama modellen: stay4s-1b, stay4s-1b-dream, qwen2.5-coder, llama3.2-vision, nomic-embed-text
+- NIEUW: Gateway op 8092, RAG database gevuld (30 items)
+- Open WebUI: nu met SearXNG web search integratie!
+
+RUNPOD STATUS:
+==============
+- Training pod (A6000): 1.15B training op 50% (step 25000/50000), ~1.2h te gaan
+  - Post-training automation: WACHTEND (draait elke 5 min)
+  - Image/Video servers: geüpload, starten na training
+- AOSP pod (4090): RUNNING, SSH traag maar pod draait
+
+NIEUWE MODellen OP PI 5:
+========================
+1. qwen2.5-coder:7b (4.7GB) - Code specialist (MAAR: traag op Pi 5 8GB)
+2. llama3.2-vision (7.8GB) - Vision/afbeeldingen model
+3. nomic-embed-text (274MB) - RAG embeddings
+
+BELANGRIJK: De 7B modellen (qwen2.5-coder, llama3.2-vision) zijn te groot
+voor Pi 5 8GB RAM om gelijktijdig met andere modellen te draaien.
+Ze werken wel als je de andere modellen eerst unload.
+Oplossing: Pi 5 16GB upgrade of via gateway naar RunPod sturen.
+
+OPEN WEBUI MET WEB SEARCH:
+==========================
+- Open WebUI is geconfigureerd met SearXNG web search
+- Ga naar http://100.123.235.81:8088 (via Tailscale)
+- Maak admin account aan (eerste gebruiker = admin)
+- Je hebt nu: Chat + Web Search + RAG + 5 modellen
+- Dit is ons eigen ChatGPT alternatief!
+
+CODEX CLOUD EQUIVALENT:
+======================
+Je zag een filmpje over Codex in de cloud. We hebben dit al:
+- Open WebUI = browser-based AI interface
+- Tailscale = toegang vanaf elke device
+- Cloudflare = toegang vanaf elke browser (na DNS fix)
+- Lees: STAY4S_CODEX_CLOUD.txt voor details
+
+WAT MOET JIJ DOEN:
+=================
+1. Cloudflare DNS fixen (CNAME records voor subdomains)
+2. Open WebUI admin account maken (ga naar 100.123.235.81:8088)
+3. Pi 5 in HP Z400 plaatsen (zoals gepland)
+4. Wachten tot 1.15B training klaar is (~1.2h)
+5. Post-training automation doet de rest automatisch
+
+BESTANDEN OP K:
+================
+K:\STAY4S-BACKUP\SESSION-STATE\20261005_2045\
+- image_gen_server.py
+- video_gen_server.py
+- rag_knowledge_filler.py
+- stay4s_gateway.py
+- post_training_auto.sh
+- AUTONOME_NACHT_STATUS.txt
+- STAY4S_CODEX_CLOUD.txt
+- UNIVERSITY_PLAN.txt
+
+GITHUB:
+=======
+5 nieuwe scripts gepusht naar stay4s-ai-board repo:
+- components/image_gen_server.py
+- components/video_gen_server.py
+- components/rag_knowledge_filler.py
+- components/stay4s_gateway.py
+- post_training_auto.sh (zonder token)
