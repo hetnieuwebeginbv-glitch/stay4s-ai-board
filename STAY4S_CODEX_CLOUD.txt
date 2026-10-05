@@ -1,0 +1,79 @@
+STAY4S CODEX CLOUD -- BROWSER-BASED AI TOEGANKELIJKHEID
+=====================================================
+Datum: 6 oktober 2026
+
+WAT MITCHEL ZAG:
+Een filmpje over Codex in de cloud. Je legt je telefoon weg en 
+kunnt zo op een browser verder gaan, waar dan ook.
+
+WAT WIJ AL HEBBEN (en niet wisten):
+==================================
+
+1. Open WebUI op Pi 5 (poort 8088)
+   - Browser-based AI chat interface
+   - Toegankelijk via Tailscale (100.123.235.81:8088)
+   - Toegankelijk via stay4s.com (Cloudflare tunnel)
+   - 5 AI modellen beschikbaar
+   - Web search via SearXNG ingebouwd
+
+2. Tailscale mesh VPN
+   - Pi 5 is bereikbaar vanaf elke device met Tailscale
+   - Laptop, telefoon, tablet - allemaal verbonden
+   - Geen public IP nodig, geen port forwarding
+
+3. Cloudflare tunnel
+   - stay4s.com is LIVE (HTTP 200)
+   - Subdomains (chat, social, vault) hebben DNS CNAME records nodig
+   - Als DNS gefixt is: toegankelijk vanaf ELKE browser ter wereld
+
+WAT WE MOETEN DOEN:
+==================
+
+STAP 1: Cloudflare DNS fixen (Mitchell moet dit doen)
+   - Login op cloudflare.com
+   - Ga naar DNS settings voor stay4s.com
+   - Voeg CNAME records toe:
+     chat -> stay4s.com
+     social -> stay4s.com
+     vault -> stay4s.com
+     api -> stay4s.com
+   - Daarna is alles bereikbaar via:
+     https://stay4s.com (hoofdpagina)
+     https://chat.stay4s.com (Open WebUI)
+     https://social.stay4s.com (Social platform)
+     https://vault.stay4s.com (E2EE Vault)
+
+STAP 2: Open WebUI configureren
+   - Maak admin account aan op Open WebUI
+   - Selecteer standaard model (stay4s-1b)
+   - Activeer web search (SearXNG al geconfigureerd)
+   - Upload documenten voor RAG
+
+STAP 3: Toegang vanaf elke browser
+   - Met Cloudflare DNS gefixt: ga naar stay4s.com
+   - Login op Open WebUI
+   - Chat met je eigen AI modellen
+   - Web search, RAG, image gen, video gen - alles beschikbaar
+   - Leg telefoon weg, ga op laptop verder, ga op tablet verder
+   - ALLES blijft op dezelfde Pi 5, overal toegankelijk
+
+VERGELIJKING MET CODEX CLOUD:
+=============================
+
+Codex Cloud (OpenAI):
+   - AI agent in cloud
+   - Browser-based
+   - Vanaf elke device toegankelijk
+   - MAAR: je data zit bij OpenAI
+
+Stay4S Cloud (ons):
+   - AI agent op eigen Pi 5
+   - Browser-based (Open WebUI)
+   - Vanaf elke device via Tailscale/Cloudflare
+   - EN: je data zit bij JOU, soeverein
+
+CONCLUSIE:
+==========
+We hebben al ons eigen Codex Cloud equivalent!
+Het enige dat ontbreekt is de Cloudflare DNS fix.
+Daarna is Stay4S bereikbaar vanaf elke browser ter wereld.
