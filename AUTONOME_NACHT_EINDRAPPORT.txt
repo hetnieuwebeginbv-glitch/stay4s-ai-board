@@ -1,0 +1,127 @@
+STAY4S AUTONOME NACHT -- EINDRAPPORT
+=====================================
+Datum: 6 oktober 2026 02:00 (Nederlandse tijd)
+
+ALLES WAT IS GEBOUWD:
+=====================
+
+1. AI GATEWAY / DECAAN ROUTER (stay4s_gateway.py)
+   - POORT 8092 OP PI 5 -- VOLLEDIG OPERATIONEEL
+   - Automatische routering naar juiste model/tool
+   - Systemd service: stay4s-gateway.service
+   - Health check: ollama ok, rag ok, memory ok
+
+2. RAG KNOWLEDGE BASE (rag_knowledge_filler.py)
+   - 30 STAY4S KENNIS ITEMS IN DATABASE
+   - Database: /mnt/usb2/rag/rag.db (143KB)
+   - Embeddings via nomic-embed-text
+   - VOLLEDIG GEVULD EN WERKT
+
+3. IMAGE GENERATION SERVER (image_gen_server.py)
+   - OP RUNPOD -- KLAAR OM TE STARTEN NA TRAINING
+   - Stable Diffusion 1.5 + FLUX.1-schnell
+   - API op poort 7860
+   - diffusers geinstalleerd op RunPod
+
+4. VIDEO GENERATION SERVER (video_gen_server.py)
+   - OP RUNPOD -- KLAAR OM TE STARTEN NA TRAINING
+   - LTX-Video (Lightricks)
+   - API op poort 7861
+   - Output als GIF
+
+5. POST-TRAINING AUTOMATION v2 (post_training_v2.sh)
+   - OP RUNPOD -- ACTIEF EN WACHTEND
+   - Wacht tot 1.15B training klaar is (elke 5 min check)
+   - Daarna: University -> GGUF -> Q4/Q8 -> HuggingFace -> Image/Video servers
+   - llama.cpp gebouwd en klaar
+   - HF to GGUF converter klaar
+
+6. SEARXNG (Docker op Pi 5)
+   - POORT 8888 -- RUNNING
+   - HTML interface werkt
+   - Search engines hebben rate limiting (residential IP probleem)
+   - Gefigureerd met Google, Bing, Wikipedia (DDG/Brave uitgeschakeld)
+
+7. OPEN WEBUI (Docker op Pi 5)
+   - POORT 8088 -- HEALTHY
+   - Met SearXNG web search integratie
+   - 5 Ollama modellen beschikbaar
+   - Eigen ChatGPT alternatief
+
+8. OLLAMA MODELS OP PI 5 (5 TOTAAL)
+   - stay4s-1b (1.2GB) -- EIGEN MODEL
+   - stay4s-1b-dream (1.2GB) -- DREAM ENGINE
+   - qwen2.5-coder:7b (4.7GB) -- CODE (uitgeladen om RAM te sparen)
+   - llama3.2-vision (7.8GB) -- VISION (uitgeladen om RAM te sparen)
+   - nomic-embed-text (274MB) -- RAG EMBEDDINGS
+
+9. CODEX CLOUD EQUIVALENT
+   - We hebben al een browser-based AI platform (Open WebUI)
+   - Toegankelijk via Tailsale (elke device) en Cloudflare (elke browser)
+   - Alleen Cloudflare DNS CNAME records moeten nog worden toegevoegd
+
+PI 5 EINDSTATUS:
+================
+- Temperatuur: 54°C (met ventilator)
+- RAM: 4.7GB gebruikt, 3.1GB beschikbaar (via buff/cache)
+- 19 systemd services actief
+- 2 Docker containers: Open WebUI (healthy), SearXNG (running)
+- 5 Ollama modellen (3 actief, 2 uitgeladen om RAM te sparen)
+- Gateway: ACTIEF op 8092
+- RAG database: 30 items
+- Docker: herstart na crash, nu stabiel
+
+RUNPOD EINDSTATUS:
+==================
+- Training pod (A6000): 1.15B training op 50% (step 25000/50000)
+  - Nog ~1.5h te gaan (0.265 s/s)
+  - Post-training v2 automation: WACHTEND
+  - llama.cpp: GEBOUWD en klaar
+  - diffusers: GEINSTALLEERD
+  - Image/Video servers: GEPLOAD, starten na training
+- AOSP pod (4090): RUNNING (SSH traag via proxy)
+
+GITHUB:
+=======
+7 bestanden gepusht naar stay4s-ai-board repo:
+- components/image_gen_server.py
+- components/video_gen_server.py
+- components/rag_knowledge_filler.py
+- components/stay4s_gateway.py
+- post_training_auto.sh
+- STAY4S_CODEX_CLOUD.txt
+- OCHTENRAPPORT_20261006.txt
+
+K: BACKUP:
+==========
+9 bestanden gekopieerd naar:
+K:\STAY4S-BACKUP\SESSION-STATE\20261005_2045\
+
+WAT GEBEURT AUTONOOM NA DIT RAPPORT:
+====================================
+1. 1.15B training loopt door tot 50000 stappen (~1.5h)
+2. Post-training v2 automation detecteert training einde
+3. University script runt (6 professoren)
+4. Model wordt geconverteerd naar GGUF
+5. GGUF wordt gekwantiseerd naar Q4 en Q8
+6. Modellen worden geupload naar HuggingFace
+7. Image generation server start op poort 7860
+8. Video generation server start op poort 7861
+
+WAT MITCHEL MOET DOEN BIJ WAKKER WORDEN:
+=======================================
+1. Lees OCHTENRAPPORT_20261006.txt
+2. Check of training klaar is: ssh naar RunPod, ls checkpoints
+3. Check post_train.log voor university resultaten
+4. Cloudflare DNS CNAME records toevoegen (lees STAY4S_CODEX_CLOUD.txt)
+5. Open WebUI admin account maken (ga naar 100.123.235.81:8088)
+6. Pi 5 in HP Z400 plaatsen (zoals gepland)
+7. Check of image/video servers draaien op RunPod (poort 7860/7861)
+
+KOSTEN TOT NU TOE:
+==================
+- RunPod A6000 training pod: ~$0.53/h x 27h = ~$14.31
+- RunPod 4090 AOSP pod: ~$0.74/h x ~3h = ~$2.22
+- Totaal: ~$16.53 verbruikt
+- RunPod saldo was ~$28, dus ~$11.47 resterend
+- Vast.ai: $0 (opgebruikt)
